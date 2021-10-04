@@ -6,17 +6,57 @@ class SignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SingleChildScrollView(
-        child: SharedWidget(buttonAction:buttonAction,frontText:'Welcome',icondata1:Icons.email_outlined,icondata2: Icons.phone,buttonText: 'Sign Up',
-          thirdField: thirdField(),firstLabelText: 'User Name',secondLabelText: 'Phone',),
-      ),
+    return Scaffold(
+      body: SharedWidget(fullTextFieldWidget:fullTextFieldWidget(),imagename: 'images/witcher.jpg',
+        buttonAction:buttonAction,frontText:'Welcome',buttonText: 'Sign Up',),
     );
   }
-  Widget thirdField(){
-    return Form(
+
+void buttonAction(){
+  if(_formKey.currentState!.validate()) {
+    _formKey.currentState!.save();
+  }
+}
+  Widget fullTextFieldWidget(){
+    return  Form(
       key: _formKey,
-      child: Container(
+      child: Column(
+        children: [
+          Container(
+            width: 300.0,
+            child: TextFormField(
+              decoration: InputDecoration(
+                labelText: 'User Name',
+                icon: Icon(Icons.email_outlined),
+              ),
+              validator: (value) {
+                if (value!.length< 11|| value.isEmpty ||
+                    !RegExp(r'[Aa-zZ]')
+                        .hasMatch(value)) {
+                  return 'Enter a valid Name!';
+                }
+                return 'Well Done';
+              },
+            ),
+          ),
+          Container(
+            width: 300.0,
+            child: TextFormField(
+              decoration: InputDecoration(
+                icon: Icon(Icons.phone),
+                labelText: ('Phone'),
+              ),
+              validator: (value) {
+                if ( value!.length< 11 || value.isEmpty ||
+                    !RegExp(r'[0-9]')
+                        .hasMatch(value)) {
+                  return 'Phone at Leats Must be 11 Numbers long!';
+                }
+                return 'Well Done';
+              },
+            ),
+          ),
+          Container(
             width: 300.0,
             child: TextFormField(
               keyboardType: TextInputType.text,
@@ -25,21 +65,19 @@ class SignUp extends StatelessWidget {
                 labelText: ('Country'),
               ),
               validator: (value) {
-    if (value!.isEmpty ||
-    !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(value)) {
-    return 'Enter a valid Country Name!';
-    }
-    return 'Well Done';
-    }
+                if (value!.isEmpty ||
+                    !RegExp(r'[Aa-zZ]')
+                        .hasMatch(value)) {
+                  return 'Enter a valid Country Name!';
+                }
+                return 'Well Done';
+              }
               ,
             ),
-          ),
+          )
+        ],
+      ),
     );
   }
-void buttonAction(){
-  if(_formKey.currentState!.validate()) {
-    _formKey.currentState!.save();
-  }
-}
+
 }

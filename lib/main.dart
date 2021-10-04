@@ -1,4 +1,5 @@
 import 'package:divtask1/commonWidgets.dart';
+import 'package:divtask1/navwidgetspage.dart';
 import 'package:divtask1/signUpScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Div Systems'),),
-      body: SignUp(),//SharedWidget(buttonText: 'Login',),
+      body: StartUpPage(),//SharedWidget(buttonText: 'Login',),
     );
   }
 }
