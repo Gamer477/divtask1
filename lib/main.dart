@@ -18,8 +18,23 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Div Systems'),),
-      body: StartUpPage(),//SharedWidget(buttonText: 'Login',),
+      drawer: SafeArea(
+        child: Drawer(
+          child: Center(
+            child: Container(
+              child:StartUpPage(colorl: Colors.amber,) ,
+            ),
+          ),
+        ),
+      ),
+      appBar: AppBar(title: Text('Div Systems'),actions: [
+        InkWell(child: Icon(Icons.menu),
+        onTap:(){
+          Scaffold.of(context).openDrawer();
+        },
+        )
+      ],),
+      body: StartUpPage(colorl: Colors.white,),//SharedWidget(buttonText: 'Login',),
     );
   }
 }

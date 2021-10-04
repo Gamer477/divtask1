@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class InputWidgets extends StatelessWidget {
 
-  InputWidgets({required this.labelText,required this.iconType,
+  InputWidgets({required this.labelText,required this.iconType,required this.validation,
     required this.regexptype,required this.obsecuringText,required this.keyboadtype});
   final String labelText;
   final IconData iconType;
+  final Function(String?) validation;
   final bool obsecuringText;
   final RegExp regexptype;
   final TextInputType keyboadtype;
@@ -20,14 +21,17 @@ class InputWidgets extends StatelessWidget {
           labelText: labelText,
           icon: Icon(iconType),
         ),
-        validator: (value) {
-          if (value!.isEmpty ||
-              !regexptype
-                  .hasMatch(value)) {
-            return 'Enter a valid $labelText!';
-          }
-          return null;
+        validator:(value){
+          validation(value);
         },
+        //     (value) {
+        //   if (value!.isEmpty ||
+        //       !regexptype
+        //           .hasMatch(value)) {
+        //     return 'Enter a valid $labelText!';
+        //   }
+        //   return null;
+        // },
       ),
     );
   }
