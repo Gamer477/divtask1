@@ -1,6 +1,7 @@
 import 'package:divtask1/main.dart';
 import 'package:divtask1/signUpScreen.dart';
 import 'package:flutter/material.dart';
+import 'bottomnavbar.dart';
 import 'commonWidgets.dart';
 import 'inpursettings.dart';
 import 'navwidgetspage.dart';
@@ -14,18 +15,9 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: new BottomNavigationBar(items: [
-        new BottomNavigationBarItem(icon: Icon(Icons.login),title: Text('Sign Up'),),
-        new BottomNavigationBarItem(icon: Icon(Icons.create_sharp),title: Text('Start Up'),),
-      ],type: BottomNavigationBarType.fixed,onTap: (val){
-        if(val==0)
-         { Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
-        Navigator.pop(context);}
-        else{
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
-          //Navigator.pop(context);
-        }
-      },),
+      bottomNavigationBar: BottomnavBar(navPageCall0: ()=>SignUp(),navPageCall1: ()=>LoginPage(),
+      icon0: Icons.person_add_alt,
+      icon1: Icons.restart_alt,text0: 'Sign Up',text1: 'Start Up',),
       body: SafeArea(
         child: SharedWidget(
           fullTextFieldWidget: fullTextFieldWidget(),
