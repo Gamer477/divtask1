@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
         ),
       ),
       appBar: AppBar(title: Text('Div Systems'),actions: [
-        InkWell(child: Icon(Icons.menu),
+        InkWell(child: SizedBox(width: 0.0,),
         onTap:(){
           Scaffold.of(context).openDrawer();
         },
