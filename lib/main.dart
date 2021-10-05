@@ -1,9 +1,6 @@
-import 'package:divtask1/commonWidgets.dart';
 import 'package:divtask1/navwidgetspage.dart';
-import 'package:divtask1/signUpScreen.dart';
 import 'package:flutter/material.dart';
 
-import 'loginScreen.dart';
 
 void main() {
   runApp(MaterialApp(

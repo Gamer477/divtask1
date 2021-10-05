@@ -12,8 +12,7 @@ final Color borderColor;
       child: RawMaterialButton(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         onPressed:
-          onpressfun
-        ,
+          onpressfun,
         child: Text(buttonText),
         highlightColor: highlightColor,
         shape: (

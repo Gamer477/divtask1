@@ -1,4 +1,3 @@
-import 'package:divtask1/navwidgetspage.dart';
 import 'package:flutter/material.dart';
 
 import 'commonButton.dart';
