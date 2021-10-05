@@ -1,6 +1,8 @@
+import 'package:divtask1/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'commonWidgets.dart';
 import 'inpursettings.dart';
+import 'main.dart';
 
 class SignUp extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -10,6 +12,18 @@ final RegExp regexpCountry=RegExp(r'[Aa-zZ]');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: new BottomNavigationBar(items: [
+        new BottomNavigationBarItem(icon: Icon(Icons.login),title: Text('LogIn'),),
+        new BottomNavigationBarItem(icon: Icon(Icons.create_sharp),title: Text('Start Up'),),
+      ],type: BottomNavigationBarType.fixed,onTap: (val){
+        if(val==0)
+        { Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+        }
+        else{
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+          //Navigator.pop(context);
+        }
+      },),
       body: SafeArea(
         child: SharedWidget(fullTextFieldWidget:fullTextFieldWidget(),imagename: 'images/witcher.jpg',
           buttonAction:buttonAction,frontText:'Welcome',buttonText: 'Sign Up',),
