@@ -21,9 +21,8 @@ class InputWidgets extends StatelessWidget {
           labelText: labelText,
           icon: Icon(iconType),
         ),
-        validator:(value){
-          validation(value);
-        },
+        validator:(value)=>validation(value),
+
         //     (value) {
         //   if (value!.isEmpty ||
         //       !regexptype
@@ -35,4 +34,6 @@ class InputWidgets extends StatelessWidget {
       ),
     );
   }
+
+
 }

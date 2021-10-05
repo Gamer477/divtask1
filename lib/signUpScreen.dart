@@ -16,17 +16,30 @@ final RegExp regexpCountry=RegExp(r'[Aa-zZ]');
       ),
     );
   }
-void  validationcountry(String? val){
-        (val) {
+String?  validationUserName(String? val){
       if (val!.isEmpty ||
-          !regexpCountry
+          !regexpusername
               .hasMatch(val)) {
-        return 'Enter a valid Country Name!';
+        return 'Enter a valid User Name!';
       }
       return null;
-    };
   }
-
+  String?  validationcountry(String? val){
+    if (val!.isEmpty ||
+        !regexpCountry
+            .hasMatch(val)) {
+      return 'Enter a valid Country Name!';
+    }
+    return null;
+  }
+  String?  validationphone(String? val){
+    if (val!.isEmpty ||
+        !regexpPhone
+            .hasMatch(val)) {
+      return 'Enter a valid Phone!';
+    }
+    return null;
+  }
 void buttonAction(){
   if(_formKey.currentState!.validate()) {
     _formKey.currentState!.save();
@@ -37,13 +50,13 @@ void buttonAction(){
       key: _formKey,
       child: Column(
         children: [
-          InputWidgets(validation:validationcountry,labelText: 'User Name',iconType: Icons.email_outlined,obsecuringText: false,
+          InputWidgets(validation:(value)=>validationUserName(value),labelText: 'User Name',iconType: Icons.email_outlined,obsecuringText: false,
         regexptype: regexpusername,keyboadtype: TextInputType.text,) ,
 
-      InputWidgets(validation:validationcountry,labelText: 'Phone',iconType: Icons.phone,obsecuringText: false,
+      InputWidgets(validation:(value)=>validationcountry(value),labelText: 'Phone',iconType: Icons.phone,obsecuringText: false,
         regexptype: regexpPhone,keyboadtype: TextInputType.phone,) ,
 
-          InputWidgets(validation:validationcountry,labelText: 'Country',iconType: Icons.add_location,obsecuringText: false,
+          InputWidgets(validation:(value)=>validationphone(value),labelText: 'Country',iconType: Icons.add_location,obsecuringText: false,
             regexptype: regexpCountry,keyboadtype: TextInputType.text,) ,
 
         ],

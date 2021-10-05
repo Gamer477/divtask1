@@ -29,14 +29,18 @@ class Login extends StatelessWidget {
     }
   }
 
-  validationEmail(String? val) {
-    (val){
+ String? validationEmail(String val) {
       if (val.isEmpty || !regexpEmail.hasMatch(val)) {
         return 'Enter a valid Email!';
       }
       return null;
-    };
+  }
 
+  String? validationPassword(String val) {
+    if (val.isEmpty || !regexpPassword.hasMatch(val)) {
+      return 'Enter a valid Password!';
+    }
+    return null;
   }
 
   Widget fullTextFieldWidget() {
@@ -45,7 +49,7 @@ class Login extends StatelessWidget {
       child: Column(
         children: [
           InputWidgets(
-            validation: validationEmail,
+            validation:(value)=> validationEmail(value!),
             labelText: 'E-Mail',
             iconType: Icons.email,
             obsecuringText: false,
@@ -53,7 +57,7 @@ class Login extends StatelessWidget {
             keyboadtype: TextInputType.text,
           ),
           InputWidgets(
-            validation: validationEmail,
+            validation: (value)=> validationPassword(value!),
             labelText: 'Password',
             iconType: Icons.password,
             obsecuringText: true,
