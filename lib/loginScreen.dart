@@ -15,7 +15,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomnavBar(navPageCall0: ()=>SignUp(),navPageCall1: ()=>LoginPage(),
+      bottomNavigationBar:BottomnavBar(navPageCall0: ()=>SignUp(),navPageCall1: ()=>LoginPage(),
       icon0: Icons.person_add_alt,
       icon1: Icons.restart_alt,text0: 'Sign Up',text1: 'Start Up',),
       body: SafeArea(

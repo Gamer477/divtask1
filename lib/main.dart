@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: LoginPage(),
   ));
 }
@@ -30,7 +31,9 @@ class LoginPage extends StatelessWidget {
           Scaffold.of(context).openDrawer();
         },
         )
-      ],),
+      ],
+        backgroundColor: Colors.deepOrange,
+      ),
       body: StartUpPage(colorl: Colors.white,),//SharedWidget(buttonText: 'Login',),
     );
   }
