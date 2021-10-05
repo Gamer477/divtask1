@@ -10,6 +10,16 @@ class StartUpPage extends StatelessWidget {
   final Color colorl;
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: new BottomNavigationBar(items: [
+        new BottomNavigationBarItem(icon: Icon(Icons.login),title: Text('LogIn'),),
+        new BottomNavigationBarItem(icon: Icon(Icons.create_sharp),title: Text('Sign Up'),),
+      ],type: BottomNavigationBarType.fixed,onTap: (val){
+        if(val==0)
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+        else{
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+        }
+      },),
       backgroundColor: colorl,
       body: Center(
           child: Column(
