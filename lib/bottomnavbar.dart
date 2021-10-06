@@ -30,7 +30,8 @@ selectedItemColor: Colors.blue,
       new BottomNavigationBarItem(icon: Icon(widget.icon1),title: Text(widget.text1),),
     ],type: BottomNavigationBarType.fixed,onTap: (val){
       if(val==0)
-      { Navigator.push(context, MaterialPageRoute(builder: (context)=>widget.navPageCall0()));
+      {
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>widget.navPageCall0()));
       setState(() {
         indexpr=0;
       });

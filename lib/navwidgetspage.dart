@@ -11,9 +11,6 @@ class StartUpPage extends StatelessWidget {
   final Color colorl;
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:BottomnavBar(navPageCall0: ()=>Login(),navPageCall1: ()=>SignUp(),
-        icon0: Icons.login,
-        icon1: Icons.person_add_alt,text0: 'LogIn',text1: 'Sign Up',),
       backgroundColor: colorl,
       body: Center(
           child: Column(

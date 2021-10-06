@@ -1,6 +1,10 @@
 import 'package:divtask1/navwidgetspage.dart';
 import 'package:flutter/material.dart';
 
+import 'bottomnavbar.dart';
+import 'loginScreen.dart';
+import 'signUpScreen.dart';
+
 
 void main() {
   runApp(MaterialApp(
@@ -16,11 +20,16 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SafeArea(
-        child: Drawer(
-          child: Center(
-            child: Container(
-              child:StartUpPage(colorl: Colors.amber,) ,
+      bottomNavigationBar:BottomnavBar(navPageCall0: ()=>Login(),navPageCall1: ()=>SignUp(),
+        icon0: Icons.login,
+        icon1: Icons.person_add_alt,text0: 'LogIn',text1: 'Sign Up',),
+      drawer:
+      SafeArea(
+        child: Container(
+          height: 763.0,
+          child: Drawer(
+            child: Center(
+              child:StartUpPage(colorl: Colors.amber,),
             ),
           ),
         ),
