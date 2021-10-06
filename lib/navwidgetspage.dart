@@ -1,9 +1,9 @@
 import 'package:divtask1/loginScreen.dart';
-import 'package:divtask1/signUpScreen.dart';
+import 'package:divtask1/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'bottomnavbar.dart';
-import 'commonButton.dart';
+import 'commonbutton.dart';
 
 class StartUpPage extends StatelessWidget {
   StartUpPage({required this.colorl});

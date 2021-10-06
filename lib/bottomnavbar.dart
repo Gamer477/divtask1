@@ -1,4 +1,4 @@
-import 'package:divtask1/signUpScreen.dart';
+import 'package:divtask1/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 

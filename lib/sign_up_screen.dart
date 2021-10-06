@@ -1,7 +1,7 @@
 import 'package:divtask1/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'bottomnavbar.dart';
-import 'commonWidgets.dart';
+import 'commonwidgets.dart';
 import 'inpursettings.dart';
 import 'main.dart';
 

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 import 'bottomnavbar.dart';
 import 'loginScreen.dart';
-import 'signUpScreen.dart';
+import 'sign_up_screen.dart';
 
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: LoginPage(),
   ));
@@ -34,8 +34,8 @@ class LoginPage extends StatelessWidget {
           ),
         ),
       ),
-      appBar: AppBar(title: Text('Div Systems'),actions: [
-        InkWell(child: SizedBox(width: 0.0,),
+      appBar: AppBar(title: const Text('Div Systems'),actions: [
+        InkWell(child: const SizedBox(width: 0.0,),
         onTap:(){
           Scaffold.of(context).openDrawer();
         },

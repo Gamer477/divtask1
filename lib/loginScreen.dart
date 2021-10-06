@@ -1,8 +1,8 @@
 import 'package:divtask1/main.dart';
-import 'package:divtask1/signUpScreen.dart';
+import 'package:divtask1/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'bottomnavbar.dart';
-import 'commonWidgets.dart';
+import 'commonwidgets.dart';
 import 'inpursettings.dart';
 import 'navwidgetspage.dart';
 

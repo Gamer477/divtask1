@@ -10,7 +10,7 @@ final Color borderColor;
   Widget build(BuildContext context) {
     return Container(
       child: RawMaterialButton(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        padding:const EdgeInsets.symmetric(horizontal: 20.0),
         onPressed:
           onpressfun,
         child: Text(buttonText),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'commonButton.dart';
+import 'commonbutton.dart';
 
 class SharedWidget extends StatelessWidget {
   SharedWidget({required this.fullTextFieldWidget,required this.imagename,required this.buttonAction,
